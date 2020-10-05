@@ -17,8 +17,11 @@
 
     <form action="/" method="post">
         <button type="submit">Post</button>
-        <input type="text" name="key" placeholder="<%= key %>">
-        <textarea name="content" rows="10" placeholder="<%= content %>"></textarea>
+        <input type="text" name="key" value="<%= key %>">
+        <textarea id="tarea" name="content" rows="10" placeholder="<%= placeholder %>"></textarea>
     </form>
+    <script>
+        document.getElementById('tarea').defaultValue="<%= content %>";
+    </script>
 </body>
 </html>

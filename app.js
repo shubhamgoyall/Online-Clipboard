@@ -14,7 +14,8 @@ app.get('/',function(req,res){
     
     res.render('clipboard',{
         key:Math.floor(Math.random()*1000),
-        content:"Type here..."
+        placeholder:"Type here...",
+        content:""
     });
 });
 
@@ -25,7 +26,8 @@ app.get('/:keyId',function(req,res){
     
     res.render('clipboard',{
         key: Key,
-        content: Content
+        content: Content,
+        placeholder:""
     })
 });
 
