@@ -1,3 +1,7 @@
+/*
+To Do:
+Success message
+*/
 const express = require('express')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
@@ -36,7 +40,6 @@ app.post('/',function(req,res){
     const mKey = req.body.key;
     const mContent = req.body.content;
 
-    console.log(mKey+"   "+mContent)
     mapContent[mKey] = mContent;
 
     res.redirect('/'.concat(mKey));

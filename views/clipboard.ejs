@@ -4,24 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Clipboard</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
 </head>
 <body>
-    <h1>Online clipboard</h1>
-    <button onclick="goToClip()">Get</button>
-    <input type="text" id="keyId" placeholder="Enter Key">
-    <script>
-        function goToClip(){
-            window.location='/'+ document.getElementById('keyId').value;
-        }
-    </script>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class='container'>
+            <span class="navbar-brand mb-0 h1">Online clipboard</span>
+        </div>
+    </nav>
+    <div class='body'>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <button onclick="goToClip()" class="btn btn-dark mb-2">Get</button>
+                    </div>
 
-    <form action="/" method="post">
-        <button type="submit">Post</button>
-        <input type="text" name="key" value="<%= key %>">
-        <textarea id="tarea" name="content" rows="10" placeholder="<%= placeholder %>"></textarea>
-    </form>
-    <script>
-        document.getElementById('tarea').defaultValue="<%= content %>";
-    </script>
+                    <div class="col-auto">
+                        <input class='form-control mb-2' type="text" id="keyId" placeholder="Enter Key">
+                    </div>
+                </div>
+                <script>
+                    function goToClip(){
+                        window.location='/'+ document.getElementById('keyId').value;
+                    }
+                </script>
+                <hr>
+                <form  action="/" method="post">
+
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <button class="btn btn-dark mb-2" type="submit" >Post</button>
+                        </div>
+                        <div class="col-auto">
+                            <input class='form-control mb-2' type="text" name="key" value="<%= key %>">
+                        </div>
+                    </div>
+                    <div class="form-row align-items-center">
+                        <div class="col">
+                            <textarea class='form-control mb-2' id="tarea" name="content" rows='12' placeholder="<%= placeholder %>"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <script>
+                    document.getElementById('tarea').defaultValue="<%= content %>";
+                </script>
+            </div>
+
+            <div class='col-md-4'>
+                <div class="card">
+                    <div class="card-header">
+                      How to use?
+                    </div>
+                    <div class="card-body">
+                      <ol>
+                          <li>Paste your text in the text area.</li>
+                          <li>Enter a random number in the post field(Or use the default value).</li>
+                          <li>On another computer, enter the same number in the get field.</li>
+                      </ol>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>2020 &copy; AlwaysBeCoding</p>
+    </footer>
 </body>
 </html>
